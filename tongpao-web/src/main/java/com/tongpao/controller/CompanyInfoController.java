@@ -1,6 +1,8 @@
 package com.tongpao.controller;
 
 
+import com.tongpao.service.ICompanyInfoService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -16,5 +18,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("//company-info")
 public class CompanyInfoController {
+
+	@Reference
+	private ICompanyInfoService iCompanyInfoService;
 
 }

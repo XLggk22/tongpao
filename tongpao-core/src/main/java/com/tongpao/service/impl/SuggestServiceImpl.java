@@ -15,6 +15,7 @@ import org.springframework.stereotype.Service;
  * @since 2020-05-26
  */
 @Service
+@org.apache.dubbo.config.annotation.Service
 public class SuggestServiceImpl extends ServiceImpl<SuggestMapper, Suggest> implements ISuggestService {
 
 }
