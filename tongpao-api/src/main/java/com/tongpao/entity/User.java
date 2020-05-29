@@ -25,18 +25,22 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-	@TableId
-	private Integer id;
 
     /**
      * 用户名
      */
+	@TableId
     private String userName;
 
     /**
      * 密码
      */
     private String password;
+
+    /**
+     * 密码
+     */
+    private String salt;
 
     /**
      * 昵称

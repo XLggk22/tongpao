@@ -89,6 +89,11 @@ public class EventRecord implements Serializable {
     private String credibleLevel;
 
     /**
+     * 审核状态（SUCCESS-成功，FAIL-失败，PROCESSING-审核中）
+     */
+    private String approvalStatus;
+
+    /**
      * 状态（1.有效；2.无效）
      */
     private String status;

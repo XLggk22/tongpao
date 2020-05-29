@@ -2,8 +2,10 @@ package com.tongpao.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -21,6 +23,8 @@ import java.time.LocalDateTime;
 @EqualsAndHashCode(callSuper = false)
 @Accessors(chain = true)
 @TableName("t_company_info")
+@Builder
+@NoArgsConstructor
 public class CompanyInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -56,7 +60,7 @@ public class CompanyInfo implements Serializable {
     /**
      * 创建来自事件ID
      */
-    private Long createFromEventId;
+    private Integer createFromEventId;
 
     /**
      * 限制原因(1-实锤事件 >=1，2-基本属实事件 >= 3)

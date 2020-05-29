@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @since 2020-05-26
  */
 @RestController
-@RequestMapping("//suggest")
+@RequestMapping("/suggest")
 public class SuggestController {
 
 }
