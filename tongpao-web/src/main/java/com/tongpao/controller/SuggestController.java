@@ -17,4 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/suggest")
 public class SuggestController {
 
+	//新增，是否使用评论系统做
+
 }

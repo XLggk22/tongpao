@@ -2,6 +2,7 @@ package com.tongpao.controller;
 
 import cn.hutool.core.util.RandomUtil;
 import cn.hutool.crypto.digest.MD5;
+import com.tongpao.common.RequestUtil;
 import com.tongpao.common.WebResponse;
 import com.tongpao.common.WebResponseUtil;
 import com.tongpao.entity.User;
@@ -27,20 +28,7 @@ import javax.servlet.http.HttpServletRequest;
 @RequestMapping("/login")
 public class LoginController {
 
-	/**
-	 * 用户登录状态
-	 */
-	private static final String USER_LOGIN_STATUS = "USER_LOGIN_STATUS";
 
-	/**
-	 * 已登录
-	 */
-	private static final String USER_LOGIN_STATUS_Y = "Y";
-
-	/**
-	 * 未登录
-	 */
-	private static final String USER_LOGIN_STATUS_N = "N";
 
 	@Reference
 	private IUserService iUserService;
@@ -64,7 +52,8 @@ public class LoginController {
 		User user = iUserService.getById(userName);
 
 		if (null != user && password.equals(getMd5EncryptedPwd(user.getPassword(),user.getSalt()))){
-			request.getSession().setAttribute(USER_LOGIN_STATUS,USER_LOGIN_STATUS_Y);
+			request.getSession().setAttribute(RequestUtil.USER_LOGIN_STATUS_KEY,RequestUtil.USER_LOGIN_STATUS_Y);
+			request.getSession().setAttribute(RequestUtil.USER_NAME_KEY,userName);
 			return WebResponseUtil.getSuccessResponse();
 		}
 
