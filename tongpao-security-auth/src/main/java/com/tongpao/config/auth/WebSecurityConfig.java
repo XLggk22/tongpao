@@ -59,7 +59,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         // 获取所有加了 IgnoreTokenAuth 注解的url
-        List<String> allIgnoreTokenAuthUrl = ScanIgnorePathUtil.getAllIgnoreTokenAuthUrl("com.rao.controller");
+        List<String> allIgnoreTokenAuthUrl = ScanIgnorePathUtil.getAllIgnoreTokenAuthUrl("com.tongpao.controller");
         log.info("allIgnoreTokenAuthUrl: {}", allIgnoreTokenAuthUrl);
         web.ignoring()
                 .antMatchers(allIgnoreTokenAuthUrl.toArray(new String[]{}));
