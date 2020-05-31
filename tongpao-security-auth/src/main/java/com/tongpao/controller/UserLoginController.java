@@ -2,8 +2,8 @@ package com.tongpao.controller;
 
 import com.tongpao.pojo.dto.PasswordLoginDTO;
 import com.tongpao.service.IUserService;
-import com.tongpao.util.WebResponse;
-import com.tongpao.util.WebResponseUtil;
+import com.tongpao.util.common.WebResponseUtil;
+import com.tongpao.util.result.WebResponse;
 import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,7 +25,7 @@ public class UserLoginController {
 
     @PostMapping("/login/member")
     public WebResponse loginMember(@Valid @RequestBody PasswordLoginDTO passwordLoginDTO){
-
+        iUserService.getById(passwordLoginDTO.getUsername());
         return WebResponseUtil.getSuccessResponse();
     }
 

@@ -1,7 +1,8 @@
-package com.tongpao.util;
+package com.tongpao.util.common;
 
 import com.tongpao.exception.DefaultSuccessMsgEnum;
 import com.tongpao.exception.ErrorMsgEnum;
+import com.tongpao.util.result.WebResponse;
 
 /**
  * <p>Title: WebResponseUtil</p>

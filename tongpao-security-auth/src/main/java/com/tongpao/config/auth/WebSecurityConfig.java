@@ -1,5 +1,6 @@
 package com.tongpao.config.auth;
 
+import com.tongpao.util.common.ScanIgnorePathUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -7,10 +8,13 @@ import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
+import java.util.List;
 
 /**
  * 安全配置
@@ -52,14 +56,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         return super.authenticationManagerBean();
     }
 
-//    @Override
-//    public void configure(WebSecurity web) throws Exception {
-//        // 获取所有加了 IgnoreTokenAuth 注解的url
-//        List<String> allIgnoreTokenAuthUrl = ScanIgnorePathUtil.getAllIgnoreTokenAuthUrl("com.rao.controller");
-//        log.info("allIgnoreTokenAuthUrl: {}", allIgnoreTokenAuthUrl);
-//        web.ignoring()
-//                .antMatchers(allIgnoreTokenAuthUrl.toArray(new String[]{}));
-//    }
+    @Override
+    public void configure(WebSecurity web) throws Exception {
+        // 获取所有加了 IgnoreTokenAuth 注解的url
+        List<String> allIgnoreTokenAuthUrl = ScanIgnorePathUtil.getAllIgnoreTokenAuthUrl("com.rao.controller");
+        log.info("allIgnoreTokenAuthUrl: {}", allIgnoreTokenAuthUrl);
+        web.ignoring()
+                .antMatchers(allIgnoreTokenAuthUrl.toArray(new String[]{}));
+    }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {

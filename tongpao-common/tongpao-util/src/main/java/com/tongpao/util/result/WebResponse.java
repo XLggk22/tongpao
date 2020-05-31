@@ -1,4 +1,4 @@
-package com.tongpao.util;
+package com.tongpao.util.result;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -29,8 +29,8 @@ public class WebResponse<T> {
     //数据
     private T data;
 
-    public WebResponse msg(String msg){
-        this.msg =msg;
+    public WebResponse msg(String msg) {
+        this.msg = msg;
         return this;
     }
 

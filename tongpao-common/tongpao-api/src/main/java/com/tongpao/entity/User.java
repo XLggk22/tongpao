@@ -25,11 +25,15 @@ public class User implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * id
+     */
+    @TableId
+    private Long id;
 
     /**
      * 用户名
      */
-	@TableId
     private String userName;
 
     /**

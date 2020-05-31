@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.oauth2.common.exceptions.InvalidTokenException;
 import org.springframework.security.web.AuthenticationEntryPoint;
-import com.tongpao.util.WebResponse;
-import com.tongpao.util.WebResponseUtil;
+import com.tongpao.util.result.WebResponse;
+import com.tongpao.util.common.WebResponseUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;

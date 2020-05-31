@@ -1,4 +1,4 @@
-package com.tongpao.util;
+package com.tongpao.util.common;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.Resource;

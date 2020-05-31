@@ -1,4 +1,4 @@
-package com.tongpao.util;
+package com.tongpao.util.common;
 
 import com.tongpao.annotation.IgnoreTokenAuth;
 import com.tongpao.exception.BusinessException;

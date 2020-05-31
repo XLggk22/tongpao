@@ -8,8 +8,8 @@ package com.tongpao.handler;
 
 import com.tongpao.exception.BusinessException;
 import com.tongpao.exception.BusinessMessage;
-import com.tongpao.util.WebResponse;
-import com.tongpao.util.WebResponseUtil;
+import com.tongpao.util.result.WebResponse;
+import com.tongpao.util.common.WebResponseUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.HttpRequestMethodNotSupportedException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
