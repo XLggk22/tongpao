@@ -1,0 +1,41 @@
+server:
+  port: 8003
+  servlet:
+    context-path: /auth
+    tomcat:
+      uri-encoding: utf-8
+
+spring:
+  # 服务注册名称
+  application:
+    name: tongpao-auth
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+    generator:
+      write_numbers_as_strings: true
+
+  # 数据源
+  datasource:
+    username: root
+    password: mysql
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    jdbc-url: jdbc:mysql://47.106.134.89:3306/tongpao?useUnicode=true&characterEncoding=utf-8&serverTimezone=Hongkong&useSSL=false
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 600000
+      maximum-pool-size: 10
+      auto-commit: true
+      pool-name: MyHikariCP
+      max-lifetime: 1800000
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+
+  # redis
+  redis:
+    host: 47.106.134.89
+    port: 6379
+    password: redis
+    database: 2
+

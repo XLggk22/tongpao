@@ -12,7 +12,7 @@ public class WebResponseUtil {
 
 	public static final String SUCCESS_STATUS = "200";
 
-	public static final String FAIL_STATUS = "400";
+	public static final String FAIL_STATUS = "500";
 
 	public static final String SUCCESS_MSG = "操作成功！";
 

@@ -2,10 +2,7 @@ package com.tongpao.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
-import lombok.Builder;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import lombok.experimental.Accessors;
 
 import java.io.Serializable;
@@ -25,6 +22,7 @@ import java.time.LocalDateTime;
 @TableName("t_company_info")
 @Builder
 @NoArgsConstructor
+@AllArgsConstructor
 public class CompanyInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;

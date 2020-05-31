@@ -1,4 +1,4 @@
-import com.tongpao.Application;
+import com.tongpao.WebApplication;
 import com.tongpao.entity.CompanyInfo;
 import com.tongpao.service.ICompanyInfoService;
 import org.apache.dubbo.config.annotation.Reference;
@@ -18,7 +18,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
  */
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest
-@ContextConfiguration(classes = Application.class)
+@ContextConfiguration(classes = WebApplication.class)
 public class Test001 {
 
 	@Reference

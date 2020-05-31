@@ -17,9 +17,10 @@
     </parent>
 
     <modules>
-        <module>tongpao-api</module>
+        <module>tongpao-common</module>
         <module>tongpao-core</module>
         <module>tongpao-web</module>
+        <module>tongpao-security-auth</module>
     </modules>
 
     <!-- 子模块公用配置 -->
@@ -59,7 +60,6 @@
                 <groupId>org.projectlombok</groupId>
                 <artifactId>lombok</artifactId>
                 <version>1.18.2</version>
-                <optional>true</optional>
             </dependency>
             <dependency>
                 <groupId>cn.hutool</groupId>
